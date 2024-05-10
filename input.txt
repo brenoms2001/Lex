@@ -1,0 +1,9 @@
+/* Meu Programa*/
+
+while x = 1/20;
+print(x+ x);
+
+if(condicao){
+    5*15;
+    bla bla bla;
+}

@@ -13,6 +13,7 @@ void clearToken(char* completeToken);
 
 //variaveis
 int c;
+int nComentarios;
 char token[MAX];
 
 int main(void){
@@ -25,10 +26,31 @@ int main(void){
 
 int proxtoken(void) {
     //simbolos
-    if (c == '+' || c == '-' || c == '*' || c == '/' || c == '=' || c == ';' || c == '%' || c == '(' || c == ')' || c == '{' || c == '}') {
+    if (c == '+' || c == '-' || c == '*' || c == '=' || c == ';' || c == '%' || c == '(' || c == ')' || c == '{' || c == '}') {
         printf("%c\n", c);
         c = getchar();
         return c;
+    }
+
+    //comentarios
+    else if(c == '/'){
+        c = getchar();
+        if(c == '*'){
+            nComentarios++;
+            while(nComentarios > 0){
+                if (c == '*'){
+                    c = getchar();
+                    if(c == '/'){
+                        nComentarios--;
+                    } 
+                }
+                c = getchar();    
+            }
+        }
+        else{
+            printf("/\n");
+            return c;
+        }        
     }
 
     //letras
@@ -46,7 +68,7 @@ int proxtoken(void) {
             clearToken(token);
             return c;
         }
-        
+
         //outras palavras
         printf("NOME %s\n", token);
         clearToken(token);

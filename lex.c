@@ -44,6 +44,16 @@ int proxtoken(void) {
                         nComentarios--;
                     } 
                 }
+                if (c == '/'){
+                    c = getchar();
+                    if(c == '*'){
+                        nComentarios++;
+                    } 
+                }
+                if (c == -1){
+                    printf("ERROR: Faltou fechar um comentário.\n");
+                    return c;
+                }               
                 c = getchar();    
             }
         }

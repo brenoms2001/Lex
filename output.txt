@@ -1,0 +1,28 @@
+while
+NOME x
+=
+NUM 1
+/
+NUM 20
+;
+NOME print
+(
+NOME x
++
+NOME x
+)
+;
+if
+(
+NOME condicao
+)
+{
+NUM 5
+*
+NUM 15
+;
+NOME bla
+NOME bla
+NOME bla
+;
+}

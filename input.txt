@@ -1,13 +1,18 @@
 /* Meu Programa*/
 
-while x = 1/20;
+WHILE x = 1/20;
 print(x+ x);
 
 /* Meu comentario gigante
 complicado * e truculento *
 */
 
-if(condicao){
+IF(condicao){
     5*15;
     bla bla bla;
 }
+
+$teste
+
+/* Comentario nao fechado
+bla bla bla bla 

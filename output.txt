@@ -1,4 +1,4 @@
-while
+WHILE
 NOME x
 =
 NUM 1
@@ -12,7 +12,7 @@ NOME x
 NOME x
 )
 ;
-if
+IF
 (
 NOME condicao
 )
@@ -26,3 +26,6 @@ NOME bla
 NOME bla
 ;
 }
+ERRO: Caractere inválido '$'
+NOME teste
+ERRO: Faltou fechar um comentário.

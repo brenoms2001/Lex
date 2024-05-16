@@ -44,14 +44,14 @@ int proxtoken(void) {
                         nComentarios--;
                     } 
                 }
-                if (c == '/'){
+                else if (c == '/'){
                     c = getchar();
                     if(c == '*'){
                         nComentarios++;
                     } 
                 }
-                if (c == -1){
-                    printf("ERROR: Faltou fechar um comentário.\n");
+                else if (c == -1){
+                    printf("ERRO: Faltou fechar um comentário.\n");
                     return c;
                 }               
                 c = getchar();    
@@ -73,7 +73,7 @@ int proxtoken(void) {
         token[i] = '\0';
 
         //palavras reservadas
-        if (strcmp(token, "if") == 0 || strcmp(token, "while") == 0 || strcmp(token, "else") == 0) {
+        if (strcmp(token, "IF") == 0 || strcmp(token, "WHILE") == 0 || strcmp(token, "ELSE") == 0) {
             printf("%s\n", token);
             clearToken(token);
             return c;
@@ -98,13 +98,17 @@ int proxtoken(void) {
         return c;
     }
 
+    //Caracteres inválidos
+    else if (c == '$' || c == '^'|| c == '~'){
+        printf("ERRO: Caractere inválido '%c'\n", c);
+    }
+
     //espacos
     else {
         c = getchar();
         return c;
     }
 }
-
     
 void clearToken(char* completeToken){
     for(int i = 0; i < MAX; i++){
